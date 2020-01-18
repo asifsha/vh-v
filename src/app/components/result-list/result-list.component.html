@@ -1,0 +1,42 @@
+<div *ngFor="let res of result">
+  <table class="list">
+    <tbody>
+      <tr class="row">
+        <td class="rank">{{ res.rank }}</td>
+        <td>{{ res.product.content.text }}</td>
+        <td>
+          <div>
+            <div class="desktop-view">Download</div>
+            <div>
+              <span
+                >&darr; {{ res.contractTerm.downloadSpeed.content.text }}</span
+              >
+            </div>
+            <div>&nbsp;</div>
+            <div class="desktop-view">Upload</div>
+            <div class="tablet-view">
+              <span
+                >&uarr; {{ res.contractTerm.uploadSpeed.content.text }}</span
+              >
+            </div>
+          </div>
+        </td>
+        <td class="desktop-view">
+          <ul *ngFor="let tb of res.additionalOptions.options">
+            <li>{{ tb.content.text }}</li>
+          </ul>
+        </td>
+        <td class="cost">
+          <div>
+            <div>
+              {{ res.cost.effectiveCost.content.text }}
+            </div>
+            <div>
+              <button class="button">To Tariff></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
